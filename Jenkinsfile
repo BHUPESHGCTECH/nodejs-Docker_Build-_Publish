@@ -26,14 +26,6 @@ pipeline {
         }
 
 #Docker pull and run docker containers    
-
-    
-    stage('pull') {
-            steps {
-                // Deploy Docker container using the built image
-                sh 'docker pull greatcoderhyd/nodeapppp'
-            }
-        }
     stage('Deploy') {
             steps {
                 // Deploy Docker container using the built image

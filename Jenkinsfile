@@ -31,9 +31,8 @@ pipeline {
                 sh 'docker run -d  --name cont1 -p 8080:3000 greatcoderhyd/nodeapppp'
             }
         }
- 
 
-        stage {
+        stage ("Logout") {
         always {
             sh 'docker logout'
         }

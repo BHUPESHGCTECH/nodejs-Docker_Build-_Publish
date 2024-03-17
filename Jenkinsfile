@@ -20,12 +20,12 @@ pipeline {
             }
         }
         stage('push image') {
-            steps{
+            steps {
                 sh 'docker push greatcoderhyd/nodeapppp:$BUILD_NUMBER'
             }
         }
         
-    stage('Deploy') {
+        stage('Deploy') {
             steps {
                 // Deploy Docker container using the built image
                 sh 'docker run -d  --name cont1 -p 8080:3000 greatcoderhyd/nodeapppp'
@@ -33,7 +33,7 @@ pipeline {
         }
  
 
-    stage {
+        stage {
         always {
             sh 'docker logout'
         }

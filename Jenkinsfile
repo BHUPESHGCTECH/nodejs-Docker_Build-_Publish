@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('greatcoder')
+    dockerhubcreden = credentials('greatcoder')
     }
     stages { 
         stage('SCM Checkout') {
@@ -12,17 +12,17 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t greatcoder/nodeapp:$BUILD_NUMBER .'
+                sh 'docker build -t greatcoderhyd/nodeapppp:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
             steps{
-                sh 'echo $DOCKERHUB_CREDENTIALS| docker login -u $DOCKERHUB_CREDENTIALS --password-stdin'
+                sh 'echo $dockerhubcreden_PSW | docker login -u $dockerhubcreden_USR --password-stdin'
             }
         }
         stage('push image') {
             steps{
-                sh 'docker push greatcoder/nodeapp:$BUILD_NUMBER'
+                sh 'docker push greatcoderhyd/nodeapppp:$BUILD_NUMBER'
             }
         }
 }

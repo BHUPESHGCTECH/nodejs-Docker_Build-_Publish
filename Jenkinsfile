@@ -31,7 +31,7 @@ pipeline {
     stage('Deploy') {
             steps {
                 // Deploy Docker container using the built image
-                sh 'docker run -d cont1 -p 8080:3000 greatcoderhyd/nodeapppp'
+                sh 'docker run -d  --name cont1 -p 8080:3000 greatcoderhyd/nodeapppp'
             }
         }
 

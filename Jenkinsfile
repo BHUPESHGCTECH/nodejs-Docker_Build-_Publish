@@ -9,7 +9,6 @@ pipeline {
             git 'https://github.com/ravdy/nodejs-demo.git'
             }
         }
-
         stage('Build docker image') {
             steps {  
                 sh 'docker build -t greatcoderhyd/nodeapppp:$BUILD_NUMBER .'
@@ -25,7 +24,6 @@ pipeline {
                 sh 'docker push greatcoderhyd/nodeapppp:$BUILD_NUMBER'
             }
         }
-}
 
 #Docker pull and run docker containers    
 

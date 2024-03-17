@@ -25,7 +25,9 @@ pipeline {
             }
         }
 
-#Docker pull and run docker containers    
+
+
+        
     stage('Deploy') {
             steps {
                 // Deploy Docker container using the built image

@@ -26,7 +26,22 @@ pipeline {
             }
         }
 }
+stage('Deploy') {
+            steps {
+                // Deploy Docker container using the built image
+                sh 'docker run -d cont1 -p 8080:3000 greatcoderhyd/nodeapppp'
+            }
+        }
+
 post {
+        always {
+            // Cleanup after deployment
+            sh 'docker rm -f ycont1 || true'
+        }
+    }
+    
+    
+    post {
         always {
             sh 'docker logout'
         }

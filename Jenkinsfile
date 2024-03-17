@@ -35,7 +35,7 @@ pipeline {
             }
         }
 
-post {
+    post {
         always {
             // Cleanup after deployment
             sh 'docker rm -f cont1 || true'

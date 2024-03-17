@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('greatcoder_ID')
+    DOCKERHUB_CREDENTIALS = credentials('greatcoder')
     }
     stages { 
         stage('SCM Checkout') {

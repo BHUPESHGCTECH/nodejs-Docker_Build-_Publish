@@ -24,9 +24,6 @@ pipeline {
                 sh 'docker push greatcoderhyd/nodeapppp:$BUILD_NUMBER'
             }
         }
-
-
-
         
     stage('Deploy') {
             steps {
@@ -40,9 +37,8 @@ pipeline {
             // Cleanup after deployment
             sh 'docker rm -f cont1 || true'
         }
-    }
-    
-    
+    }  
+
     post {
         always {
             sh 'docker logout'

@@ -33,7 +33,7 @@ pipeline {
         }
 
         stage ("Logout") {
-        always {
+            steps {
             sh 'docker logout'
         }
     }

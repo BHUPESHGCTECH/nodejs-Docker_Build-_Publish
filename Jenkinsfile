@@ -31,15 +31,9 @@ pipeline {
                 sh 'docker run -d  --name cont1 -p 8080:3000 greatcoderhyd/nodeapppp'
             }
         }
+ 
 
-    post {
-        always {
-            // Cleanup after deployment
-            sh 'docker rm -f cont1 || true'
-        }
-    }  
-
-    post {
+    stage {
         always {
             sh 'docker logout'
         }

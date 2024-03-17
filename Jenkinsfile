@@ -36,7 +36,7 @@ stage('Deploy') {
 post {
         always {
             // Cleanup after deployment
-            sh 'docker rm -f ycont1 || true'
+            sh 'docker rm -f cont1 || true'
         }
     }
     
